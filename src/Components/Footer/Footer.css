@@ -1,0 +1,44 @@
+.container {
+  width: 55%;
+  margin: 0 auto;
+  padding-top: 6rem;
+  height: 50vh;
+}
+.sosial-media-icons {
+  width: 10%;
+  display: flex;
+  font-size: 22px;
+  color: white;
+}
+.sosial-media-icons .fa-brands{
+  margin-right: 15px;
+}
+.container .lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #656565;
+}
+.container .lists ul {
+  list-style: none;
+  padding-top: 1rem;
+}
+.lists ul li {
+  line-height: 2;
+  font-size: 14px;
+}
+
+footer .container button {
+  margin-top: 1.5rem;
+  outline: none;
+  padding: 5px;
+  background-color: transparent;
+  border: 1px solid #656565;
+  color: #656565;
+}
+footer .container p {
+  font-size: 10px;
+  font-weight: 300;
+  margin-top: 1rem;
+  color: #656565;
+}
