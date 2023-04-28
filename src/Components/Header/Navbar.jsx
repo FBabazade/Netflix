@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 import logo from "../../Common/Assets/img/Logonetflix.png";
 import user from "../../Common/Assets/img/Netflix-avatar.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 function Navbar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -49,6 +49,7 @@ function Navbar() {
     fetchData(value);
   };
   return (
+    <>
     <div className={`navbar ${navscroll && "navbar-black"} `}>
       <div className="nav-contents">
         <div className="nav-left">
@@ -71,7 +72,7 @@ function Navbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink onClick={closeMobileMenu} to="/tvshows">
+              <NavLink onClick={closeMobileMenu} to="/tvshow">
                 TV Shows
               </NavLink>
             </li>
@@ -124,6 +125,8 @@ function Navbar() {
         </div>
       </div>
     </div>
+    <Outlet/>
+    </>
   );
 }
 

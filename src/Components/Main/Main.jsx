@@ -7,12 +7,12 @@ import {
   fetchHorror,
   fetchMystery,
   fetchSciFi,
-} from "../../service";
+} from "../../service/data";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 function Main() {
   const [trending, setTrending] = useState([]);

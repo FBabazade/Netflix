@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar";
 import "./Header.css";
 
 function Header() {
@@ -27,7 +26,7 @@ function Header() {
   };
   return (
     <header>
-      <Navbar />
+     
       <div
         className="banner"
         style={{
