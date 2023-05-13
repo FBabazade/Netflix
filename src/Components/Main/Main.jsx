@@ -21,6 +21,8 @@ function Main() {
   const [horror, setHorror] = useState([]);
   const [mystery, setMystery] = useState([]);
   const [scifi, setSciFi] = useState([]);
+  const [myList, setMyList] = useState([]);
+  const intialMyList = JSON.parse(window.localStorage.getItem("mylist"));
 
   const fetchAllData = async () => {
     const [
@@ -47,15 +49,22 @@ function Main() {
   };
   useEffect(() => {
     fetchAllData();
-  }, []);
+    intialMyList && setMyList(intialMyList);
+  },[]);
+
+  useEffect(() => {
+    window.localStorage.setItem("mylist", JSON.stringify(myList));
+  }, [myList]);
+
+  
   return (
     <div className="main-rows">
-      <Row title="Trending" card={mystery} />
-      <Row title="Anime" card={anime} />
-      <Row title="Comedy" card={comedy} />
-      <Row title="Horror" card={horror} />
-      <Row title="Mystery" card={trending} />
-      <Row title="Sci-Fi" card={scifi} />
+      <Row title="Trending" card={mystery} setMyList={setMyList} myList={myList}/>
+      <Row title="Anime" card={anime} setMyList={setMyList} myList={myList} />
+      <Row title="Comedy" card={comedy} setMyList={setMyList} myList={myList} />
+      <Row title="Horror" card={horror} setMyList={setMyList} myList={myList} />
+      <Row title="Mystery" card={trending} setMyList={setMyList}  myList={myList}/>
+      <Row title="Sci-Fi" card={scifi} setMyList={setMyList} myList={myList} />
     </div>
   );
 }

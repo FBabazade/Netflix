@@ -7,7 +7,7 @@ function Header() {
 
   const fetchData = () => {
     fetch(
-      "https://api.themoviedb.org/3/search/movie?api_key=77b75897bd6de248789745dbd1270fe7&query=all"
+      "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=1cf50e6248dc270629e802686245c2c8&with_genres=all"
     )
       .then((response) => response.json())
       .then((movie) => {
@@ -20,21 +20,15 @@ function Header() {
     fetchData();
   }, []);
 
-
   const textPart = (string, e) => {
     return string?.length > e ? string.substr(0, e) + "..." : string;
   };
   return (
     <header>
-     
       <div
         className="banner"
         style={{
-          background: `url(${
-            movie?.backdrop_path
-              ? BASE_URL_IMAGE + movie?.backdrop_path
-              : "https://movies.sterkinekor.co.za/CDN/media/entity/get/FilmTitleGraphic/HO00002615?referenceScheme=HeadOffice&allowPlaceHolder=true"
-          })`,
+          background: `url(${BASE_URL_IMAGE + movie?.backdrop_path})`,
         }}
       >
         <div className="banner-fadeBottom2" />
@@ -45,10 +39,14 @@ function Header() {
           </h1>
           <div className="banner-button">
             <div className="play-btn">
-              <button><i className="fa-solid fa-play"></i> Play</button>
+              <button>
+                <i className="fa-solid fa-play"></i> Play
+              </button>
             </div>
             <div className="info-btn">
-              <button><i className="fa-solid fa-circle-info"></i> More Info</button>
+              <button>
+                <i className="fa-solid fa-circle-info"></i> More Info
+              </button>
             </div>
           </div>
         </div>
